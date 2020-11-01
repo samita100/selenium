@@ -2,26 +2,34 @@ from selenium import webdriver
 import requests
 import time
 
-response = requests.get("https://xrohan.me/proxy")
 
-proxy = response.text
+def first():
+  response = requests.get("https://xrohan.me/proxy")
 
-
-chrome_options = webdriver.ChromeOptions()
-#chrome_options.add_argument("--headless")
-chrome_options.add_argument("--disable-dev-shm-usage")
-chrome_options.add_argument("--no-sandbox")
-chrome_options.add_argument("--allow-popups-during-page-unload")
-chrome_options.add_argument("--disable-popup-blocking")
-chrome_options.add_argument("--enable-auto-reload")
-chrome_options.add_argument(f'--proxy-server={proxy}')
+  proxy = response.text
 
 
-driver = webdriver.Chrome("./chromedriver", chrome_options=chrome_options)
+  chrome_options = webdriver.ChromeOptions()
+  #chrome_options.add_argument("--headless")
+  chrome_options.add_argument("--disable-dev-shm-usage")
+  chrome_options.add_argument("--no-sandbox")
+  chrome_options.add_argument("--allow-popups-during-page-unload")
+  chrome_options.add_argument("--disable-popup-blocking")
+  chrome_options.add_argument("--enable-auto-reload")
+  chrome_options.add_argument(f'--proxy-server={proxy}')
 
-driver.get("https://www.alexamaster.net/ads/autosurf/117735")
+  driver = webdriver.Chrome("./chromedriver", chrome_options=chrome_options)
 
-time.sleep(600)
+  driver.get("https://google.com")
+  time.sleep(3)
+  try:
+    driver.get("https://www.alexamaster.net/ads/autosurf/117735")
+  except:
+    
+    first()
+
+
+  time.sleep(600)
 
 
 driver.quit()
