@@ -21,7 +21,7 @@ driver = webdriver.Chrome("./chromedriver", chrome_options=chrome_options)
 
 driver.get("https://www.alexamaster.net/ads/autosurf/117735")
 
-time.sleep(550)
+time.sleep(600)
 
 
 driver.quit()
