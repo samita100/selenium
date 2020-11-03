@@ -21,6 +21,11 @@ def first():
 
   driver = webdriver.Chrome("./chromedriver", chrome_options=chrome_options)
 
+  youtube()
+
+
+
+def youtube():
   try:
     driver.set_page_load_timeout(30)
     driver.get("https://youtube.com")
@@ -29,59 +34,33 @@ def first():
     driver.quit()
     first()
 
+
+def ws():
+  driver.get("http://www.websurf.cz/auto/?name=rock6064")
+  time.sleep(120)
+
+
+def ws2():
+  global sm
+  sm = 0
+  while sm != 20:
+    try:
+      ws()
+      sm += 1
+    except:
+      driver.quit()
+      first()
+      sm += 1
+
+
+
+
+
+
+
+
 first()
-time.sleep(3)
-driver.set_page_load_timeout(125)
-driver.get("http://www.websurf.cz/auto/?name=rock6064")
-time.sleep(23)
-driver.refresh()
-time.sleep(60)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-driver.refresh()
-time.sleep(120)
-
-
+ws2
 
 
 driver.quit()
