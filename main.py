@@ -4,6 +4,7 @@ import time
 
 
 def first():
+  global driver
   response = requests.get("https://xrohan.me/proxy")
 
   proxy = response.text
