@@ -60,7 +60,7 @@ def ws2():
 
 
 first()
-ws2
+ws2()
 
 
 driver.quit()
