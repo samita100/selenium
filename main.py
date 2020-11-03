@@ -19,9 +19,10 @@ def first():
   chrome_options.add_argument(f'--proxy-server={proxy}')
 
   driver = webdriver.Chrome("./chromedriver", chrome_options=chrome_options)
-  
+  driver.get("https://google.com")
+
   try:
-    driver.get("https://google.com")
+    print(driver.title)
   except:
     driver.quit()
     first()
