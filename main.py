@@ -20,10 +20,10 @@ def first():
   chrome_options.add_argument(f'--proxy-server={proxy}')
 
   driver = webdriver.Chrome("./chromedriver", chrome_options=chrome_options)
-  driver.get("https://google.com")
 
   try:
-    driver.get("https://google.com")
+    driver.set_page_load_timeout(30)
+    driver.get("https://youtube.com")
     print(driver.title)
   except:
     driver.quit()
@@ -31,6 +31,7 @@ def first():
 
 first()
 time.sleep(3)
+driver.set_page_load_timeout(125)
 driver.get("http://www.websurf.cz/auto/?name=rock6064")
 time.sleep(23)
 driver.refresh()
