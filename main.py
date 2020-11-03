@@ -22,6 +22,7 @@ def first():
   driver.get("https://google.com")
 
   try:
+    driver.get("https://google.com")
     print(driver.title)
   except:
     driver.quit()
@@ -29,7 +30,7 @@ def first():
 
 first()
 time.sleep(3)
-driver.get("https://url.rw/?https%3A%2F%2Ft.co%2FWV8SaGbYLi%3Famp%3D1")
+driver.get("http://www.websurf.cz/auto/?name=rock6064")
 time.sleep(23)
 driver.refresh()
 time.sleep(60)
